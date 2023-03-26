@@ -6,7 +6,7 @@ import org.jetbrains.compose.web.dom.*
 import org.jetbrains.compose.web.renderComposable
 
 fun main() {
-    var count: Int by mutableStateOf(0)
+    var count by mutableStateOf(0)
 
     renderComposable(rootElementId = "root") {
         Div({ style { padding(25.px) } }) {
@@ -22,10 +22,33 @@ fun main() {
 
             Button(attrs = {
                 onClick { count += 1 }
+                style {
+                    color(Color.rebeccapurple)
+                }
             }) {
                 Text("+")
+            }
+
+            Div(
+                attrs = {
+                    style {
+                       styleForText()
+                    }
+                }
+            ) {
+                Text("Hello Compose web")
             }
         }
     }
 }
 
+object MyStyleSheet : StyleSheet() {
+    val container by style {
+        border(width = 3.px, style = LineStyle.Dashed, color = Color.rebeccapurple)
+    }
+}
+
+fun StyleScope.styleForText(){
+    color(Color.rebeccapurple)
+    border(width = 3.px, style = LineStyle.Dashed, color = Color.rebeccapurple)
+}
