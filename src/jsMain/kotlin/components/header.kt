@@ -9,7 +9,6 @@ import org.jetbrains.compose.web.attributes.target
 import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.A
 import org.jetbrains.compose.web.dom.Div
-import org.jetbrains.compose.web.dom.Span
 import org.jetbrains.compose.web.dom.Text
 
 @Composable
@@ -31,9 +30,9 @@ fun header() {
 
             }
         ) {
-            appText("Home","http://localhost:8080/home")
-            appText("Images","http://localhost:8080/images")
-            appText("About Us","http://localhost:8080/aboutus")
+            appText("Home", "http://localhost:8080/home")
+            appText("Images", "http://localhost:8080/images")
+            appText("About Us", "http://localhost:8080/aboutus")
         }
     }
 }
@@ -41,7 +40,7 @@ fun header() {
 @Composable
 fun appText(
     text: String,
-    url:String
+    url: String
 ) {
     A(
         attrs = {

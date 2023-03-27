@@ -8,6 +8,9 @@ object MyStyleSheet : StyleSheet() {
         "*" style {
             padding(0.px)
             margin(0.px)
+            boxSizing("borderBox")
+            property("font-family", "Arial, Helvetica, sans-serif")
+
         }
     }
 
@@ -16,12 +19,23 @@ object MyStyleSheet : StyleSheet() {
         fontSize(20.px)
         textDecoration("none")
         paddingRight(10.px)
-        property("font-family", "Arial, Helvetica, sans-serif")
         hover(self) style {
             color(Color.cyan)
             textDecoration("underline")
             textDecorationColor(Color.cyan)
         }
+    }
+
+    val body_image by style {
+        maxWidth("100%")
+        maxHeight("auto")
+    }
+
+    val footer_container by style {
+        display(DisplayStyle.Block)
+        margin(0.px)
+        padding(0.px)
+        background("black")
     }
 
 }
