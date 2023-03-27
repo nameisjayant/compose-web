@@ -33,9 +33,17 @@ object MyStyleSheet : StyleSheet() {
 
     val footer_container by style {
         display(DisplayStyle.Block)
-        margin(0.px)
-        padding(0.px)
         background("black")
+    }
+
+    val footer_hover by style {
+        paddingRight(15.px)
+        color(Color.white)
+        textDecoration("none")
+        hover(self) style {
+            textDecoration("underline")
+            textDecorationColor(Color.cyan)
+        }
     }
 
 }

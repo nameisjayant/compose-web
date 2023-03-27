@@ -2,6 +2,9 @@ package components
 
 import androidx.compose.runtime.Composable
 import css.MyStyleSheet
+import org.jetbrains.compose.web.attributes.ATarget
+import org.jetbrains.compose.web.attributes.href
+import org.jetbrains.compose.web.attributes.target
 import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.*
 import org.w3c.dom.url.URL
@@ -28,16 +31,38 @@ fun footer() {
             ) {
                 Text("Social Links")
             }
+
             Div(
                 attrs = {
                     style {
                         display(DisplayStyle.Block)
+                        paddingTop(15.px)
                     }
                 }
             ) {
-                footerLinks("Instagram","")
-                footerLinks("Github","")
-                footerLinks("Youtube","")
+                footerLinks("Instagram","https://www.instagram.com/programming_simplified")
+                footerLinks("Github","https://www.github.com/nameisjayant")
+                footerLinks("Youtube","https://www.youtube.com/programmingsimplified0")
+            }
+
+            Div(
+                attrs = {
+                    style {
+                        paddingTop(15.px)
+                        display(DisplayStyle.Flex)
+                        justifyContent(JustifyContent.Center)
+                    }
+                }
+            ) {
+                H3(
+                    attrs = {
+                        style {
+                            color(Color.white)
+                        }
+                    }
+                ) {
+                    Text("Made with Compose ❤️")
+                }
             }
         }
     }
@@ -50,11 +75,9 @@ fun footerLinks(
 ){
     A(
         attrs = {
-            style {
-                paddingTop(15.px)
-                color(Color.white)
-                textDecoration("none")
-            }
+            href(url)
+            target(ATarget.Blank)
+            classes(MyStyleSheet.footer_hover)
         }
     ){
         Text(text)
