@@ -34,6 +34,7 @@ fun main() {
                     style {
                        styleForText()
                     }
+
                 }
             ) {
                 Text("Hello Compose web")
