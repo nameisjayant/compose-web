@@ -11,7 +11,7 @@ import org.w3c.dom.url.URL
 
 @Composable
 fun footer() {
-    Div(attrs = {
+    Footer(attrs = {
         classes(MyStyleSheet.footer_container)
     }) {
         Div(

@@ -9,11 +9,12 @@ import org.jetbrains.compose.web.attributes.target
 import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.A
 import org.jetbrains.compose.web.dom.Div
+import org.jetbrains.compose.web.dom.Header
 import org.jetbrains.compose.web.dom.Text
 
 @Composable
 fun header() {
-    Div(
+    Header(
         attrs = {
             style {
                 background("black")

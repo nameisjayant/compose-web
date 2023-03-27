@@ -46,4 +46,18 @@ object MyStyleSheet : StyleSheet() {
         }
     }
 
+    val buttonStyle by style {
+        position(Position.Absolute)
+        property("top", "50%")
+        property("left", "50%")
+        padding(10.px)
+        fontSize(40.px)
+        borderWidth(0.px)
+        borderRadius(10.px)
+        background("white")
+        hover(self) style{
+            background("cyan")
+        }
+    }
+
 }
